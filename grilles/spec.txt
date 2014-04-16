@@ -1,0 +1,17 @@
+  : ciel => pas de class
+. : terre => class terre
+* : mur => class mur
+| : bloc => class terre et bloc
+_ : socle => class terre et socle
+§ : perso => class terre et perso
+# : bloc sur socle => class terre et bloc et socle
+$ : personnage sur socle => class terre et perso et socle
+
+
+
+attributs d'une case :
+- terre
+- mur
+- bloc
+- socle
+- perso

@@ -6,4 +6,62 @@
 }
 body {
 	font: normal 16px Arial, sans-serif;
+	padding: 20px 100px;
+}
+/*------------------------------------------------------------------------------*/
+/* Formulaire */
+/*------------------------------------------------------------------------------*/
+select {
+	border: solid 1px black;
+	margin-bottom: 50px;
+}
+/*------------------------------------------------------------------------------*/
+/* Tableau */
+/*------------------------------------------------------------------------------*/
+table.casess {	
+	border-collapse: collapse;
+	background: url('../img/jeu/ciel.jpeg');
+	margin-bottom: 30px;
+}
+table.casess tr.cases {
+	
+}
+table.casess tr.cases td.case {
+	width: 60px;
+	height: 60px;
+	position: relative;
+}
+/*------------------------------------------------------------------------------*/
+/* Cases */
+/*------------------------------------------------------------------------------*/
+table.casess div {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+table.casess div.terre {
+	background: url(../img/jeu/terre.png);
+	z-index: 0;
+}
+table.casess div.mur {
+	background: url(../img/jeu/mur.png);
+	z-index: 1;
+}
+table.casess div.bloc {
+	background: url(../img/jeu/bloc.png);
+	z-index: 3;
+}
+table.casess div.socle {
+	background: url(../img/jeu/socle.png);
+	z-index: 2;
+}
+table.casess div.perso {
+	background: url(../img/jeu/perso.png);
+	z-index: 4;
+}
+table.casess div.on {
+	display: block;
 }

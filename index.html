@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="appSokoban" ng-controller="ctrlSokoban" on-keyup>
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,6 +9,50 @@
 	</head>
 	<body>
 		
+		<form action="#">
+			<label>Choisissez une grille :</label><br>
+			<select ng-model="fileName" ng-options="option for option in fileNames"></select>
+		</form>
+		
+		<table class="casess">
+			<tr ng-repeat="cases in casess" class="cases">
+				<td ng-repeat="case in cases" class="case">
+					<div class="terre" ng-class="{on : case.terre}"></div>
+					<div class="mur" ng-class="{on : case.mur}"></div>
+					<div class="socle" ng-class="{on : case.socle}"></div>
+					<div class="bloc" ng-class="{on : case.bloc}"></div>
+					<div class="perso" ng-class="{on : case.perso}"></div>
+				</td>
+			</tr>
+		</table>
+		
+		<h3>Commandes :</h3>
+		<table>
+			<tr>
+				<td>
+					Déplacement :
+				</td>
+				<td>
+					<img src="img/commandes/fleches.png" alt="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					défaire :
+				</td>
+				<td>
+					<img src="img/commandes/delete.png" alt="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Recommancer :
+				</td>
+				<td>
+					<img src="img/commandes/entree.png" alt="">
+				</td>
+			</tr>
+		</table>
 	
 		
 	</body>
