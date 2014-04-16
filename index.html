@@ -11,21 +11,27 @@
 		
 		<form action="#">
 			<label>Choisissez une grille :</label><br>
-			<select ng-model="fileName" ng-options="option for option in fileNames"></select>
+			<select ng-model="level" ng-options="fileName.file as fileName.title for fileName in fileNames" ng-change></select>
 		</form>
+		
+		<h1 id="win" ng-show="win">WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN !!!</h1>
 		
 		<table class="casess">
 			<tr ng-repeat="cases in casess" class="cases">
 				<td ng-repeat="case in cases" class="case">
-					<div class="terre" ng-class="{on : case.terre}"></div>
-					<div class="mur" ng-class="{on : case.mur}"></div>
-					<div class="socle" ng-class="{on : case.socle}"></div>
-					<div class="bloc" ng-class="{on : case.bloc}"></div>
-					<div class="perso" ng-class="{on : case.perso}"></div>
+					<div class="terre" ng-show="case.terre"></div>
+					<div class="mur" ng-show="case.mur"></div>
+					<div class="socle" ng-show="case.socle"></div>
+					<div class="bloc" ng-show="case.bloc"></div>
+					<div class="perso" ng-show="case.perso"></div>
 				</td>
 			</tr>
 		</table>
 		
+		<p id="coups">
+			Nombre de coups : <strong>{{coups.length}}</strong>
+		</p>
+				
 		<h3>Commandes :</h3>
 		<table>
 			<tr>
@@ -46,13 +52,16 @@
 			</tr>
 			<tr>
 				<td>
-					Recommancer :
+					Recommencer :
 				</td>
 				<td>
 					<img src="img/commandes/entree.png" alt="">
 				</td>
 			</tr>
 		</table>
+		
+		<button ng-click="undoMove()">Undo</button>
+		<button ng-click="reset()">Recommencer</button>
 	
 		
 	</body>

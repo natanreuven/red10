@@ -40,7 +40,6 @@ table.casess div {
 	position: absolute;
 	left: 0;
 	top: 0;
-	display: none;
 }
 table.casess div.terre {
 	background: url(../img/jeu/terre.png);
@@ -62,6 +61,18 @@ table.casess div.perso {
 	background: url(../img/jeu/perso.png);
 	z-index: 4;
 }
-table.casess div.on {
-	display: block;
+
+
+
+
+
+
+
+
+h1#win {
+	color: green;
+	margin-bottom: 20px;
+}
+p#coups {
+	margin-bottom: 20px;
 }
