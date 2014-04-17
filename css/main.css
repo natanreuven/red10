@@ -7,17 +7,76 @@
 body {
 	font: normal 16px Arial, sans-serif;
 	padding: 20px 100px;
+	background: #2e2e2e;
+	color: white;
 }
-/*------------------------------------------------------------------------------*/
-/* Formulaire */
-/*------------------------------------------------------------------------------*/
-select {
+/* Header */
+header {	
+	background: url('../img/logo-angular.png') left 5px no-repeat;
+	padding-left: 20px;
+	margin-bottom: 30px;
+}
+header h1 {
+	font-size: 44px;
+}
+header span {
+	color: transparent;
+}
+/* Form select level */
+form#selectLevel {
+	margin-bottom: 10px;
+}
+form#selectLevel select {
 	border: solid 1px black;
-	margin-bottom: 50px;
 }
-/*------------------------------------------------------------------------------*/
+/* Commandes */
+#commands {
+	margin-bottom: 20px;
+}
+button#btnUndo {
+	width: 48px;
+	height: 40px;
+	background: url('../img/undo.png');
+	text-indent: -9999px;
+	cursor: pointer;
+	outline: none;
+	float: right;
+	margin-right: 15px;
+}
+button#btnReset {
+	width: 50px;
+	height: 40px;
+	background: url('../img/reset.png');
+	text-indent: -9999px;
+	cursor: pointer;
+	outline: none;
+	float: right;
+}
+p#coups {
+	margin-bottom: 20px;
+}
+
+
+button#btnSolution {
+	height: 70px;
+	background: url('../img/solution.png') left center no-repeat;
+	outline: none;
+	cursor: pointer;
+	padding-left: 80px;
+	color: white;
+}
+
+
+/* Win and Lost */
+h1#win {
+	color: green;
+	margin-bottom: 20px;
+}
+h1#lost {
+	color: red;
+	margin-bottom: 20px;
+}
 /* Tableau */
-/*------------------------------------------------------------------------------*/
 table.casess {	
 	border-collapse: collapse;
 	background: url('../img/jeu/ciel.jpeg');
@@ -31,9 +90,7 @@ table.casess tr.cases td.case {
 	height: 60px;
 	position: relative;
 }
-/*------------------------------------------------------------------------------*/
 /* Cases */
-/*------------------------------------------------------------------------------*/
 table.casess div {
 	width: 60px;
 	height: 60px;
@@ -60,19 +117,4 @@ table.casess div.socle {
 table.casess div.perso {
 	background: url(../img/jeu/perso.png);
 	z-index: 4;
-}
-
-
-
-
-
-
-
-
-h1#win {
-	color: green;
-	margin-bottom: 20px;
-}
-p#coups {
-	margin-bottom: 20px;
 }

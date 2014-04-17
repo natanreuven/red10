@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="appSokoban" ng-controller="ctrlSokoban" on-keyup>
 	<head>
-		<title></title>
+		<title>Angular Sokoban</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" media="all" href="css/main.css">
 		<script type="text/javascript" src="js/angular.min.js"></script>
@@ -9,59 +9,47 @@
 	</head>
 	<body>
 		
-		<form action="#">
-			<label>Choisissez une grille :</label><br>
+		<header>
+			<h1><span>A</span>ngular Sokoban
+		</header>
+		
+		<form action="#" id="selectLevel">
+			<label>Niveau :</label>
 			<select ng-model="level" ng-options="fileName.file as fileName.title for fileName in fileNames" ng-change></select>
 		</form>
 		
 		<h1 id="win" ng-show="win">WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN !!!</h1>
+		<h1 id="lost" ng-show="lost">GAME OVER :-(</h1>
 		
-		<table class="casess">
-			<tr ng-repeat="cases in casess" class="cases">
-				<td ng-repeat="case in cases" class="case">
-					<div class="terre" ng-show="case.terre"></div>
-					<div class="mur" ng-show="case.mur"></div>
-					<div class="socle" ng-show="case.socle"></div>
-					<div class="bloc" ng-show="case.bloc"></div>
-					<div class="perso" ng-show="case.perso"></div>
-				</td>
-			</tr>
-		</table>
 		
-		<p id="coups">
-			Nombre de coups : <strong>{{coups.length}}</strong>
+		<div style="display: inline-block">
+			<table class="casess">
+				<tr ng-repeat="cases in casess" class="cases">
+					<td ng-repeat="case in cases" class="case">
+						<div class="terre" ng-show="case.terre"></div>
+						<div class="mur" ng-show="case.mur"></div>
+						<div class="socle" ng-show="case.socle"></div>
+						<div class="bloc" ng-show="case.bloc"></div>
+						<div class="perso" ng-show="case.perso"></div>
+					</td>
+				</tr>
+			</table>
+			<div id="commands">
+				<button id="btnReset" ng-click="reset()">Recommencer</button>
+				<button id="btnUndo" ng-click="undoMove()">Undo</button>
+				<p id="coups">
+					Nombre de coups : <strong>{{coups.length}}</strong>
+				</p>
+			</div>
+		</div>
+
+		
+		<p>
+			<button ng-click="findSolution()" id="btnSolution">Calculer la solution</button>
 		</p>
-				
-		<h3>Commandes :</h3>
-		<table>
-			<tr>
-				<td>
-					Déplacement :
-				</td>
-				<td>
-					<img src="img/commandes/fleches.png" alt="">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					défaire :
-				</td>
-				<td>
-					<img src="img/commandes/delete.png" alt="">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Recommencer :
-				</td>
-				<td>
-					<img src="img/commandes/entree.png" alt="">
-				</td>
-			</tr>
-		</table>
 		
-		<button ng-click="undoMove()">Undo</button>
-		<button ng-click="reset()">Recommencer</button>
+		
+
 	
 		
 	</body>
