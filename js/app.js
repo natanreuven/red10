@@ -519,6 +519,8 @@ appSokoban.controller('ctrlSokoban', function($scope, $http) {
 
 	$scope.findSolution = function() {	
 		
+		
+		
 		$scope.arbre = [];
 		$scope.id_found = -1;
 		$scope.id_cursor = 0;
