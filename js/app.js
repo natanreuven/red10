@@ -12,7 +12,7 @@ appSokoban.controller('ctrlSokoban', function($scope, $http) {
 	
 	$scope.casess = [[]];
 	$scope.fileNames = [];
-	for(var i=1; i<=6; i++)
+	for(var i=1; i<=7; i++)
 		$scope.fileNames.push({file : 'grilles/grille-'+i+'.sok', title : 'Level '+i});
 	$scope.level = $scope.fileNames[0]['file'];	
 	$scope.coups = [];
