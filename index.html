@@ -3,54 +3,60 @@
 	<head>
 		<title>Sokoban</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="//cdn.jsdelivr.net/bootflat/2.0.0/css/bootflat.css">
+		<link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" media="all" href="css/main.css">
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
-		
-		<header>
-			<h1><span>A</span>ngular Sokoban
-		</header>
-		
-		<form action="#" id="selectLevel">
-			<label>Niveau :</label>
-			<select ng-model="level" ng-options="fileName.file as fileName.title for fileName in fileNames" ng-change></select>
-		</form>
-		
-		<h1 id="win" ng-show="win">WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIN !!!</h1>
-		<h1 id="lost" ng-show="lost">GAME OVER :-(</h1>
-		
-		
-		<div style="display: inline-block">
-			<table class="casess">
-				<tr ng-repeat="cases in casess" class="cases">
-					<td ng-repeat="case in cases" class="case">
-						<div class="terre" ng-show="case.terre"></div>
-						<div class="mur" ng-show="case.mur"></div>
-						<div class="socle" ng-show="case.socle"></div>
-						<div class="bloc" ng-show="case.bloc"></div>
-						<div class="perso" ng-show="case.perso"></div>
-					</td>
-				</tr>
-			</table>
-			<div id="commands">
-				<button id="btnReset" ng-click="reset()">Recommencer</button>
-				<button id="btnUndo" ng-click="undoMove()">Undo</button>
-				<p id="coups">
-					Nombre de coups : <strong>{{coups.length}}</strong>
-				</p>
-			</div>
-		</div>
-
-		
-		<p>
-			<button ng-click="findSolution()" id="btnSolution">Calculer la solution</button>
-		</p>
-		
-		{{yo}}
-
-	
-		
+	    <div class="container">
+	        <div class="row">
+        	    <div class="col-md-6 col-md-offset-3">
+        	        <div class="page-header text-center">
+        	            <h1>Angular Sokoban</h1>
+        	        </div>
+        	        <div class="row">
+        	            <div class="col-md-12">
+        	                <div class="panel panel-info">
+        	                    <div class="panel-heading">
+        	                        <select class="form-control" ng-model="level" ng-options="fileName.file as fileName.title for fileName in fileNames" ng-change></select>
+        	                    </div>
+        	                    <div class="panel-body text-center">       
+        	                        
+        	                        <!-- Alert messages -->
+        	                        <div ng-show="win"  class="alert alert-success">Win</div>
+                                    <div ng-show="lost" class="alert alert-danger">Lost</div>
+                             	                        
+        	                        <table class="casess">
+                                        <tr ng-repeat="cases in casess" class="cases">
+                                            <td ng-repeat="case in cases" class="case">
+                                                <div class="terre"  ng-show="case.terre"></div>
+                                                <div class="mur"    ng-show="case.mur"></div>
+                                                <div class="socle"  ng-show="case.socle"></div>
+                                                <div class="bloc"   ng-show="case.bloc"></div>
+                                                <div class="perso"  ng-show="case.perso"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+        	                    </div>
+        	                    <div class="panel-footer">
+                                    <button class="btn btn-sm btn-default" ng-click="reset()">
+                                        <i class="fa fa-refresh"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-default" ng-click="undoMove()">
+                                         <i class="fa fa-undo"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-info pull-right" ng-click="findSolution()">
+                                        <i class="fa fa-question"></i>
+                                    </button>
+                                </div>
+        	                </div><!-- /.panel -->
+        	            </div><!-- /.col -->
+        	        </div><!-- /.row --> 
+                </div><!-- /.col -->
+	        </div><!-- /.row -->
+	    </div><!-- /.container -->
 	</body>
 </html>
