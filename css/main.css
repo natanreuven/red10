@@ -24,14 +24,18 @@ table.casess div {
 }
 table.casess div.terre {
 	background: url(../img/jeu/terre.png);
-	z-index: 0;
+	z-index: 0;   
+	/* the green block picture   */
 }
 table.casess div.mur {
 	background: url(../img/jeu/mur.png);
 	z-index: 1;
+	/* the black block picture   */
 }
 table.casess div.bloc {
-	background: url(../img/jeu/bloc.png);
+	background-color:green;
+	 border-style: solid;
+	 border-width: 1px;
 	z-index: 3;
 }
 table.casess div.socle {
