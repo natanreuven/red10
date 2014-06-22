@@ -3,7 +3,7 @@ body{
 }
 table.casess {	
 	border-collapse: collapse;
-	background: url('../img/jeu/ciel.jpeg');
+	/* background: url('../img/numbers/number1.jpg'); */
 	margin: auto;
 }
 table.casess tr.cases {

@@ -69,10 +69,12 @@ appSokoban.controller('ctrlSokoban', function($scope, $http) {
 			var lignesText = data.split('\n');
 			var uneGrille = [];
 			for(var i=0; i<lignesText.length-1; i++) {
+				 console.log("row	");
 				var ligne = lignesText[i];
 				var chars = ligne.split('');
 				var uneLigne = [];
 				for(var j=0; j<ligne.length-1; j++) {
+					 console.log("column	");
 					var char = ligne[j];
 					var uneCase = $scope.createCase(char);
 					uneLigne.push(uneCase);
