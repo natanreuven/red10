@@ -3,7 +3,7 @@ body{
 }
 table.casess {	
 	border-collapse: collapse;
-	/* background: url('../img/numbers/number1.jpg'); */
+	max-width:100%; max-height:100%;
 	margin: auto;
 }
 table.casess tr.cases {
@@ -13,6 +13,7 @@ table.casess tr.cases td.case {
 	width: 60px;
 	height: 60px;
 	position: relative;
+	
 }
 /* Cases */
 table.casess div {
@@ -23,7 +24,8 @@ table.casess div {
 	top: 0;
 }
 table.casess div.terre {
-	background: url(../img/jeu/terre.png);
+	
+	"width: 100%;max-height: 100%" ;
 	z-index: 0;   
 	/* the green block picture   */
 }
@@ -36,7 +38,9 @@ table.casess div.bloc {
 	background-color:green;
 	 border-style: solid;
 	 border-width: 1px;
+	background: url(../img/numbers/number1.jpg);
 	z-index: 3;
+	
 }
 table.casess div.socle {
 	background: url(../img/jeu/socle.png);
